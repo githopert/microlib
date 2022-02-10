@@ -25,7 +25,7 @@
     ```
     It will open a new TXT-file (created in the `card_path` folder) in the specified editor.
 
-4. To search an index card in the `cards_path` folder, use this command:
+4. To find an index card in the `cards_path` folder, use this command:
 
     ```
     $ microlib -n 0 -d 202202 -r 30
