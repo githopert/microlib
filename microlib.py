@@ -148,7 +148,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.generate:
+        new_name = generate_name()
+        print("Creating the file: " +
+                        os.path.join(settings['cards_path'], new_name))
         os.system(settings['editor'] + ' ' +
-                        os.path.join(settings['cards_path'], generate_name()))
+                        os.path.join(settings['cards_path'], new_name))
     else:
         find_card(args)
