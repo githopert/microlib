@@ -21,17 +21,17 @@
 3. To create a new index card**, use this command:
 
     ```
-    $ microlib -g
+    $ ./microlib -g
     ```
     It will open a new TXT-file (created in the `card_path` folder) in the specified editor.
 
 4. To find an index card in the `cards_path` folder, use this command:
 
     ```
-    $ microlib -n 0 -d 202202 -r 30
+    $ ./microlib -n 0 -d 202202 -r 30
     ```
     ```
-    $ microlib -w test
+    $ ./microlib -w test
     ```
 
 *On Windows, you can use `notepad` as your editor
