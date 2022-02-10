@@ -7,7 +7,7 @@
 1. Create the binary:
     
     ```
-    $ pyinstaller --onefile main.py
+    $ pyinstaller --onefile microlib.py
     ```
 
 2. Modify the file setting.json*:
