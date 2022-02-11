@@ -149,7 +149,7 @@ if __name__ == '__main__':
     parser.add_argument('--open', dest='open', default='', type=str,
                         help='opens the card specified by name. '
                         'Example: ./microlib -o <filename.txt>')
-    parser.add_argument('--remove', dest='remove',
+    parser.add_argument('--remove', dest='remove', default='', type=str,
                         help='removes the index card '
                         'specified by name')
  
