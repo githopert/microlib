@@ -2,7 +2,18 @@
 10/20/30
 20220210
 
-==== TITLE ====
+==== INDEX CARD EXAMPLE ====
 
 Hello!
-Test.
+
+The first 3 lines of any index card form the header.
+
+The first line of any index card is its number.
+
+The second line of any index card is references. References are the numbers of
+the index cards that are related to this one. References are separated by '/'.
+
+The third line of any index card is the creation data. The date should be in
+the YYYYMMDD format.
+
+The rest of the index card is the body. Format it however you like.
