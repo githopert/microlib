@@ -10,7 +10,7 @@
     $ pyinstaller --onefile microlib.py
     ```
 
-2. Modify the file setting.json*:
+2. Modify the file [setting.json](settings.json)*:
 
     ```json
     {
@@ -21,17 +21,26 @@
 3. To create a new index card**, use this command:
 
     ```
-    $ ./microlib -g
+    $ ./microlib --generate
     ```
     It will open a new TXT-file (created in the `card_path` folder) in the specified editor.
 
 4. To find an index card in the `cards_path` folder, use this command:
 
     ```
-    $ ./microlib -n 0 -d 202202 -r 30
+    $ ./microlib -n 0 -d 202202 -r 30 -w test
     ```
+
+5. To open an index card specified by its name (not including the directory), use this command:
+    
     ```
-    $ ./microlib -w test
+    $ ./microlib --open <filename.txt>
+    ```
+
+6. To remove an index card specified by its name (not including the directory), use this command:
+
+    ```
+    $ ./microlib --remove <filename.txt>
     ```
 
 *On Windows, you can use `notepad` as your editor

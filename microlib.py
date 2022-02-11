@@ -12,7 +12,7 @@ from random import randrange
 
 # Variables
 symbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'
-length = 32
+length = 20
 with open('settings.json', 'r') as r:
     settings = json.load(r)
 
@@ -96,8 +96,8 @@ def find_card(args: argparse.Namespace) -> None:
 
             # Accept or reject this card
             if True in checks and checks == checked:
-                relevant_cards.append('{:<15} | {:<34}'.format(
-                                                    current_number, f.name))
+                relevant_cards.append('{:<15} | {:<22}'.format(
+                                                    current_number, file))
 
     print_card_list(relevant_cards)
 
@@ -118,7 +118,7 @@ def print_card_list(cl: list) -> None:
     """
     if len(cl) > 0:
         # Header
-        print('{:<15} | {:<34}'.format('card number', 'card file'))
+        print('{:<15} | {:<22}'.format('card number', 'card file'))
         print('-' * 49)
         # Body
         for card in sorted(cl): print(card)
@@ -133,6 +133,7 @@ if __name__ == '__main__':
         ' for an index card in the specified directory. To select the '
         'directory, modify the file `settings.json`')
     
+    # Search arguments
     parser.add_argument('-n', dest='number', default='', type=str,
                         help='an index card number. Example: 1_111_a_2')
     parser.add_argument('-r', dest='reference', default='', type=str,
@@ -142,8 +143,15 @@ if __name__ == '__main__':
                         'Example: 20210831')
     parser.add_argument('-w', dest='words', default='', type=str,
                         help='keywords. Example: INDEX')
-    parser.add_argument('-g', '--generate', dest='generate',
+    # Card manipulation arguments
+    parser.add_argument('--generate', dest='generate',
                         action='store_true', help='generates a new card')
+    parser.add_argument('--open', dest='open', default='', type=str,
+                        help='opens the card specified by name. '
+                        'Example: ./microlib -o <filename.txt>')
+    parser.add_argument('--remove', dest='remove',
+                        help='removes the index card '
+                        'specified by name')
  
     args = parser.parse_args()
 
@@ -153,5 +161,10 @@ if __name__ == '__main__':
                         os.path.join(settings['cards_path'], new_name))
         os.system(settings['editor'] + ' ' +
                         os.path.join(settings['cards_path'], new_name))
+    elif args.open != '':
+        os.system(settings['editor'] + ' ' +
+                        os.path.join(settings['cards_path'], args.open))
+    elif args.remove != '':
+        os.remove(os.path.join(settings['cards_path'], args.remove))
     else:
         find_card(args)
