@@ -1,12 +1,13 @@
-0_a_10
+123
 10/20/30
 20220210
+a
 
 ==== INDEX CARD EXAMPLE ====
 
 Hello!
 
-The first 3 lines of any index card form the header.
+The first 4 lines of any index card form the header.
 
 The first line of any index card is its number.
 
@@ -15,5 +16,7 @@ the index cards that are related to this one. References are separated by '/'.
 
 The third line of any index card is the creation data. The date should be in
 the YYYYMMDD format.
+
+The forth line of any index card is its type. It can be any letter or word.
 
 The rest of the index card is the body. Format it however you like.
