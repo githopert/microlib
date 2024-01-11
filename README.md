@@ -28,19 +28,7 @@
 4. To find an index card in the `cards_path` folder, use this command:
 
     ```
-    $ ./microlib -n 0 -d 202202 -r 30 -w test
-    ```
-
-5. To open an index card specified by its name (not including the directory), use this command:
-    
-    ```
-    $ ./microlib --open <filename.txt>
-    ```
-
-6. To remove an index card specified by its name (not including the directory), use this command:
-
-    ```
-    $ ./microlib --remove <filename.txt>
+    $ ./microlib -n 0 -d 202202 -r 30 -w test -t a
     ```
 
 *On Windows, you can use `notepad` as your editor
