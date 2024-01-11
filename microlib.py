@@ -174,7 +174,7 @@ if __name__ == '__main__':
     editor = microlib.settings['editor']
 
     if not os.path.exists(card_dir):
-        os.mkdirs(card_dir)
+        os.makedirs(card_dir)
 
     if args.generate:
         new_name = microlib.generate_card_name()

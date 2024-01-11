@@ -1,4 +1,4 @@
 {
-    "cards_dir": ".",
+    "cards_dir": "cards",
     "editor": "nvim" 
 }
